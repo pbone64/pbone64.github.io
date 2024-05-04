@@ -29,12 +29,8 @@ ul {
     
 }
 
-a {
+a, a:visited {
     color: var(--ansi-bright-blue);
-}
-
-a:visited {
-    color: var(--ansi-magenta)
 }
 
 .header {
