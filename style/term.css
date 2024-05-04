@@ -1,0 +1,47 @@
+:root {
+    --ansi-black: rgb(0, 0, 0);
+    --ansi-red: rgb(170, 0, 0);
+    --ansi-green: rgb(0, 170, 0);
+    --ansi-yellow: rgb(170, 85, 0);
+    --ansi-blue: rgb(0, 0, 170);
+    --ansi-magenta: rgb(170, 0, 170);
+    --ansi-cyan: rgb(0, 170, 170);
+    --ansi-white: rgb(170, 170, 170);
+
+    --ansi-bright-black: rgb(85, 85, 85);
+    --ansi-bright-red: rgb(255, 85, 85);
+    --ansi-bright-green: rgb(85, 255, 85);
+    --ansi-bright-yellow: rgb(255, 255, 85);
+    --ansi-bright-blue: rgb(85, 85, 255);
+    --ansi-bright-magenta: rgb(255, 85, 255);
+    --ansi-bright-cyan: rgb(85, 255, 255);
+    --ansi-bright-white: rgb(255, 255, 255);
+}
+
+body {
+    background: var(--ansi-black);
+    color: var(--ansi-bright-white);
+    font-family: monospace;
+}
+
+ul {
+    list-style: '- ';
+    
+}
+
+a {
+    color: var(--ansi-bright-blue);
+}
+
+a:visited {
+    color: var(--ansi-magenta)
+}
+
+.header {
+    background: var(--ansi-green);
+    color: var(--ansi-black);
+    padding-left: 2pt;
+    font-size: 1em;
+    margin-top: 2.5em;
+}
+
