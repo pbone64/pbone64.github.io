@@ -32,6 +32,10 @@ a, a:visited {
     color: var(--ansi-bright-blue);
 }
 
+a:not(:hover) {
+    text-decoration: none;
+}
+
 .header {
     background: var(--term-accent);
     color: var(--ansi-black);
