@@ -1,4 +1,6 @@
 :root {
+    color-scheme: dark;
+
     --ansi-black: rgb(0, 0, 0);
     --ansi-red: rgb(170, 0, 0);
     --ansi-green: rgb(0, 170, 0);
