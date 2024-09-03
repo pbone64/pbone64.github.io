@@ -2,14 +2,13 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout
@@ -31,7 +30,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: public
-          name: github-pages
 
   deploy:
     runs-on: ubuntu-latest
