@@ -26,8 +26,8 @@ jobs:
         run: zola build
 
       - name: Upload artifact
-        id: upload-artifact
-        uses: actions/upload-artifact@v4
+        id: upload-pages-artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: public
           name: github-pages
@@ -42,7 +42,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: https://pbone.dev/
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy
