@@ -1,4 +1,4 @@
-name: Build & deploy Zola site
+name: Build & Deploy
 
 on:
   push:
@@ -23,6 +23,7 @@ jobs:
 
       - name: Build site
         id: zola-build
+        shell: sh
         run: zola build
 
       - name: Upload artifact
