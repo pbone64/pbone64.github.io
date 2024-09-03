@@ -1,0 +1,18 @@
+# The URL the site will be built for
+base_url = "https://pbone.dev"
+
+title = "pbone.dev"
+author = "pbone"
+description = "pbone's home on the web"
+default_language = "en"
+
+minify_html = true
+feed_filenames = ["atom.xml", "rss.xml"]
+
+compile_sass = false
+build_search_index = false
+
+[markdown]
+highlight_code = true
+highlight_theme = "OLEDppuccin"
+extra_syntaxes_and_themes = [ "syn" ]

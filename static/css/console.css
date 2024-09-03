@@ -18,16 +18,31 @@
     --ansi-bright-magenta: rgb(255, 85, 255);
     --ansi-bright-cyan: rgb(85, 255, 255);
     --ansi-bright-white: rgb(255, 255, 255);
+
+    --console-accent: var(--ansi-white);
+    --console-accent-fg: var(--ansi-black);
+}
+
+pre[data-lang] {
+    padding: 2px;
+    border: 1px;
+    border-radius: 4px;
+    color: var(--ansi-bright-white) !important;
+    background-color: var(--ansi-black) !important;
 }
 
 body {
     background: var(--ansi-black);
     color: var(--ansi-bright-white);
     font-family: monospace;
+    font-size: 14px;
+    max-width: 800px;
+    margin: 1em auto;
 }
 
 ul {
     list-style: '- ';
+    margin-top: 0.5em;
 }
 
 a, a:visited {
@@ -38,14 +53,19 @@ a:not(:hover) {
     text-decoration: none;
 }
 
-.header {
-    background: var(--term-accent);
-    color: var(--ansi-black);
-    padding: 0.5pt 2pt;
+h1 {
+    background: var(--console-accent);
+    color: var(--console-accent-fg);
+    padding: 2px;
+    font-weight: bold;
     font-size: 1em;
-    margin-top: 2.5em;
+    margin-top: 2em;
 }
 
-.first-header {
-    margin-top: 8px;
+h1:first-child {
+    margin-top: 0;
+}
+
+.weak {
+    color: var(--ansi-white);
 }

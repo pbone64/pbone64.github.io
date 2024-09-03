@@ -1,0 +1,8 @@
+{% extends "page.html" %}
+
+{% block body %}
+    {% set section = get_section(path = page.ancestors | last) %}
+    <h1>~{{section.path }} $ cat {{ page.components | last }}</h1>
+    {% if page.date %}<p><b>date:</b> {{ page.date }}</p>{% endif %}
+    {{ super() }}
+{% endblock body %}

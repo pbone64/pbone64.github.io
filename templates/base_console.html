@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+            <title>~{% block console_title %}{% endblock %}</title>
+            <meta name="description" content="pbone's home on the web." />
+
+            <link rel="stylesheet" href="/css/console.css" />
+            <link rel="icon" type="image/x-icon" href="/ico/{% block console_icon %}{% endblock %}.ico" />
+
+            <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path='/blog/rss.xml', trailing_slash=false) }}">
+            <link rel="alternate" type="application/atom+xml" title="Atom" href="{{ get_url(path='/blog/atom.xml', trailing_slash=false) }}">
+
+            <style>
+                :root {
+                    --console-accent: var(--ansi-{% block console_accent %}green{% endblock %});
+                    --console-accent-fg: var(--ansi-{% block console_accent_fg %}black{% endblock %});
+                }
+            </style>
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+    <footer>
+        <p class="weak">
+            website and content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+            (c) 2024 pbone
+        </p>
+    </footer>
+</html>

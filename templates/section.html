@@ -1,0 +1,57 @@
+{% extends "base_console.html" %}
+
+{% block console_icon -%}
+    {{ section.extra.console_icon | default(value = "about") }}
+{%- endblock %}
+
+{% block console_title -%}
+    {{ section.extra.console_path | default(value = current_path) | safe }}
+{%- endblock %}
+
+{% block console_accent -%}
+    {{ section.extra.console_accent | default(value = "green") }}
+{%- endblock %}
+
+{% block body %}
+    {{ section.content | safe }}
+
+    {% if section.subsections %}
+        {% if not ls_once %}
+            <h1>~{{ current_path }} $ ls</h1>
+            <ul>
+            {% set ls_once=true %}
+        {% endif %}
+        {% for subsection_name in section.subsections %}
+            {% set subsection = get_section(path = subsection_name) %}
+            <li><a href="{{ subsection.permalink }}">{{ subsection.path }}</a></li>
+        {% endfor %}
+    {% endif %}
+
+    {% if section.pages %}
+        {% if not ls_once %}
+            <h1>~{{ current_path }} $ ls</h1>
+            <ul>
+            {% set ls_once=true %}
+        {% endif %}
+        {% for page in section.pages %}
+            <li><a href="{{ page.permalink | trim_end_matches(pat='/') | safe }}">{{ page.title }}</a>
+            {% if page.date %}
+                ({{ page.date }})
+            {% endif %}
+            {% if page.summary %}
+                <br />
+                {{ page.summary | safe }}
+            {% endif %}
+            </li>
+        {% endfor %}
+    {% endif %}
+
+    {% if ls_once %}
+        </ul>
+    {% endif%}
+
+    {% if section.ancestors | last -%}
+        {% set parent = get_section(path = section.ancestors | last) %}
+        <p><a href="{{ parent.permalink }}">..return to {{ parent.extra.console_ls_path | default(value = parent.path) | safe }}</a></p>
+    {%- endif %}
+{% endblock body %}

@@ -1,0 +1,21 @@
+{% extends "base_console.html" %}
+
+{% block console_icon -%}
+    {% set section = get_section(path = page.ancestors | last) -%}
+    {{ page.extra.console_icon | default(value = section.extra.console_icon | default(value="about")) }}
+{%- endblock %}
+
+{% block console_title -%}
+    {{ current_path | trim_end_matches(pat='/') }}
+{%- endblock %}
+
+{% block console_accent -%}
+    {% set section = get_section(path = page.ancestors | last) -%}
+    {{ page.extra.console_accent | default(value = section.extra.console_accent | default(value="green")) }}
+{%- endblock %}
+
+{% block body %}
+    {% set section = get_section(path = page.ancestors | last) %}
+    {{ page.content | safe }}
+    <p><a href="{{ section.permalink }}">..return to {{ section.extra.console_ls_path | default(value = section.path) | safe }}</a></p>
+{% endblock body %}
