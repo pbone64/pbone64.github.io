@@ -16,11 +16,17 @@ jobs:
         id: install-toolchain
         uses: dtolnay/rust-toolchain@stable
 
+      - name: Checkout Zola
+        id: checkout-zola
+        uses: actions/checkout@v4
+        with:
+          repository: getzola/zola
+          ref: v0.19.2
+          path: .zola
+
       - name: Install Zola
         id: install-zola
-        run: cargo install --git https://github.com/getzola/zola.git@v0.19.2
-        env:
-          CARGO_NET_GIT_FETCH_WITH_CLI: true
+        run: cargo install --path .zola
 
       - name: Build site
         id: zola-build
