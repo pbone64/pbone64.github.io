@@ -1,0 +1,71 @@
+:root {
+    color-scheme: dark;
+
+    --ansi-black: rgb(0, 0, 0);
+    --ansi-red: rgb(170, 0, 0);
+    --ansi-green: rgb(0, 170, 0);
+    --ansi-yellow: rgb(170, 85, 0);
+    --ansi-blue: rgb(0, 0, 170);
+    --ansi-magenta: rgb(170, 0, 170);
+    --ansi-cyan: rgb(0, 170, 170);
+    --ansi-white: rgb(170, 170, 170);
+
+    --ansi-bright-black: rgb(85, 85, 85);
+    --ansi-bright-red: rgb(255, 85, 85);
+    --ansi-bright-green: rgb(85, 255, 85);
+    --ansi-bright-yellow: rgb(255, 255, 85);
+    --ansi-bright-blue: rgb(85, 85, 255);
+    --ansi-bright-magenta: rgb(255, 85, 255);
+    --ansi-bright-cyan: rgb(85, 255, 255);
+    --ansi-bright-white: rgb(255, 255, 255);
+
+    --console-accent: var(--ansi-white);
+    --console-accent-fg: var(--ansi-black);
+}
+
+pre[data-lang] {
+    padding: 2px;
+    border: 1px;
+    border-radius: 4px;
+    color: var(--ansi-bright-white) !important;
+    background-color: var(--ansi-black) !important;
+}
+
+body {
+    background: var(--ansi-black);
+    color: var(--ansi-bright-white);
+    font-family: monospace;
+    font-size: 14px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+ul {
+    list-style: '- ';
+    margin-top: 0.5em;
+}
+
+a, a:visited {
+    color: var(--ansi-bright-blue);
+}
+
+a:not(:hover) {
+    text-decoration: none;
+}
+
+h1 {
+    background: var(--console-accent);
+    color: var(--console-accent-fg);
+    padding: 2px;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 2em;
+}
+
+h1:first-child {
+    margin-top: 0;
+}
+
+.weak {
+    color: var(--ansi-white);
+}
