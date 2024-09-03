@@ -7,24 +7,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Install Aola
-        uses: taiki-e/install-action@v2
-        with:
-          tool: zola@0.19.1
-
   build:
     runs-on: ubuntu-latest
-    needs: setup
     if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v4
+
+      - name: Install Zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.1
 
       - name: Build site
         id: zola-build
